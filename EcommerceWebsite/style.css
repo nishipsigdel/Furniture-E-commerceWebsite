@@ -1,0 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+    --primary--color: #254d4d;
+    --text--dark: #171717;
+    --text--light: #737373;
+    --extra--light: #f4f6f5;
+    --white: #ffffff;
+    --max--width: 1200px;
+    --header--font: "Merriweather", serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sectionContainer{
+    max-width: var(--max--width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.sectionHeader{
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: var(--header--font);
+    color: var(--primary--color);
+}
+
+.sectionDescription{
+    font-size: 1.1rem;
+    color: var(--text--light);
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--header--font);
+}
+
+img{
+    display: flex;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+ul{
+    list-style: none;
+}
+
+html,body{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+nav{
+    position: fixed;
+    isolation: isolate;
+    width: 100%;
+    max-width: var(--max--width);
+    margin-inline: auto;
+    z-index: 9;
+}
+
+.navHeader{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary--color);   
+}
+
+.navLogo .logo{
+    color: var(--white);
+}
+
+.navMenuButton{
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.navLinks{
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--primary--color);
+    transition: .5s;
+    z-index: -1;
+    transform: translateY(-100%);
+}
+
+.navLinksOpen{
+    transform: translateY(0);
+}
+
+.navLinks a{
+    font-weight: 600;
+    color: var(--white);
+}
+
+.navSearch{
+    display: none;
+}
+
+.headerContainer{
+    display: grid;
+    overflow: hidden;
+}
+
+.headerImage{
+    grid-area: 1/1/2/2;
+}
+
+.headerImage img{
+    max-width: 900px;
+    margin-left: auto;
+}
+
+.headerContent{
+    grid-area: 1/1/2/2;
+    display: flex;
+    align-items: center;
+}
+
+.headerContent > div{
+    max-width: 500px;
+    padding: 4rem 1rem;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.headerContent h1{
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 600;
+    font-family: var(--header--font);
+    color: var(--primary--color);
+}
+
+.headerContent p{
+    font-size: 1.2rem;
+    color: var(--text--light);
+}
+
+.dealsContainer{
+    display: grid;
+    gap: 2rem;
+}
+
+.dealsCard span{
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.dealsCard h4{
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text--dark);
+}
+
+.dealsCard p{
+    color: var(--text--light);
+}
+
+.aboutHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.aboutHeader .sectionDescription{
+    max-width: 600px;
+}
+
+.aboutButton{
+    width: fit-content;
+    padding: .75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    white-space: nowrap;
+    background-color: var(--primary--color);
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.aboutContent{
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.aboutGrid{
+    display: grid;
+    gap: 2rem;
+}
+
+.aboutImage{
+    overflow: hidden;
+}
+
+.aboutCard h3{
+    margin-bottom: .5rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary--color);
+}
+
+.aboutCard h4{
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary--color);
+}
+
+.aboutCard p{
+    color: var(--text--light);
+}
+
+.productGrid{
+    margin-top: 4rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.productCard{
+    position: relative;
+    isolation: isolate;
+    padding: 2rem;
+}
+
+.productCard::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    background-color: var(--extra--light);
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.productCard:hover::before{
+    height: 100%;
+}
+
+.productCard h4{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text--light);
+}
+
+.productCard p{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: var(--text--light);
+}
+
+.productCard img{
+    max-width: 275px;
+    margin-inline: auto;
+}
+
+.clientContent{
+    padding: 4rem 1rem;
+    background-color: var(--extra--light);
+    border-radius: 1rem;
+}
+
+.clientContent :is(.sectionHeader, .sectionDescription){
+    max-width: 550px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.clientContent .sectionHeader{
+    font-size: 3.25rem;
+}
+
+.swiper{
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.clientCard{
+    display: grid;
+    gap: 2rem;
+    max-width: 750px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.clientCard img{
+    max-width: 250px;
+    margin-inline: auto;
+}
+
+.clientCard p{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: var(--text--light);
+    font-style: italic;
+}
+
+.clientCard h4{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text--dark);
+}
+
+.clientCard h5{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text--light);
+}
+
+.footer{
+    background-color: var(--primary--color);
+}
+
+.footerContainer{
+    display: grid;
+    gap: 4rem 2rem;
+}
+
+.footerLogo{
+    margin-bottom: 1rem;
+}
+
+.footerLogo .logo{
+    color: var(--white);
+}
+
+.footerCol p{
+    margin-bottom: 2rem;
+    color: var(--extra--light);
+    opacity: 0.8;
+}
+
+.footerSocials{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footerSocials a{
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.footerSocials a:hover{
+    opacity: 0.5;
+}
+
+.footerCol h4{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.footerLinks{
+    display: grid;
+    gap: 1rem;
+}
+
+.footerLinks a{
+    color: var(--extra--light);
+    opacity: 0.8;
+}
+
+.footerLinks a:hover{
+    opacity: 1;
+}
+
+.footerBar{
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--extra--light);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.footerContainer{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (width > 540px){
+    .dealsContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .aboutGrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .productGrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width > 768px){
+    nav{
+        position: static;
+        padding: 2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .navHeader{
+        flex: 1;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .navMenuButton{
+        display: none;
+    }
+
+    .navLogo .logo{
+        color: var(--primary--color);
+    }
+
+    .navLinks{
+        position: static;
+        padding: 0;
+        width: fit-content;
+        flex-direction: row;
+        gap: 3rem;
+        background-color: transparent;
+        transform: none;
+    }
+
+    .navLinks a{
+        color: var(--text--dark);
+        
+    }
+
+    .navLinks a:hover{
+        color: var(--primary--color);
+        text-decoration: underline;
+        
+    }
+
+    .navSearch{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    .navSearch input{
+        padding-block: 5px;
+        outline: none;
+        border: none;
+        width: 0;
+        font-size: 1rem;
+        color: var(--text--dark);
+        border-bottom: 1px solid var(--text--light);
+        transform: 0.3s;
+    }
+
+    .navSearchOpen input{
+        width: 100%;
+        max-width: 15rem;
+    }
+
+    .navSearch span{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text--dark);
+        cursor: pointer;
+    }
+
+    .headerContainer{
+        padding-top: 0;
+
+    }
+
+    .dealsContainer{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dealsCard:nth-child(1){
+        grid-column: 1/4;
+    }
+
+    .aboutHeader{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .aboutContent{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .aboutImage{
+        grid-area: 1/2/2/3;
+    }
+
+    .productGrid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .clientCard{
+        grid-template-columns: 2, 1fr;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footerContainer{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (width >1024px) {
+    .dealsContainer{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dealsCard:nth-child(1){
+        grid-column: unset;
+    }
+
+    .aboutGrid{
+        gap: 4rem 2rem;
+    }
+
+}
